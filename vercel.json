@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [{ "source": "/coin/:mint", "destination": "/" }],
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [{ "key": "cache-control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/data/img/(.*)", "headers": [{ "key": "cache-control", "value": "public, max-age=604800" }] },
+    { "source": "/data/(.*).json", "headers": [{ "key": "cache-control", "value": "public, max-age=600" }] }
+  ]
+}
